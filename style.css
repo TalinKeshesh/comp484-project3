@@ -38,3 +38,16 @@ body {
   /* Sets the element to be completely invisible and not take up space. */
   display: none;
 }
+
+/* Status History Log */
+#status-history {
+  background-color: #fff8dc;
+  border: 1px solid #ddd;
+  padding: 15px 30px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+#status-history li {
+  margin-bottom: 6px;
+}

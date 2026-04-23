@@ -12,6 +12,7 @@ const statusOutput = document.querySelector("#status-output");
 const timerButton = document.getElementById("timer-button");
 const controlPanel = document.getElementById("control-panel");
 const itemList = document.getElementById("item-list");
+const statusHistory = document.getElementById("status-history");
 
 /* ======================================= */
 // --- Task 3: Selecting and Changing Inner HTML ---
@@ -49,6 +50,18 @@ function createTimestamp() {
 	statusOutput.appendChild(timestamp);
 }
 
+function addStatusHistory() {
+	const firstHistoryItem = statusHistory.querySelector("li");
+
+	if (firstHistoryItem && firstHistoryItem.innerHTML === "No status updates yet.") {
+		firstHistoryItem.remove();
+	}
+
+	const historyItem = document.createElement("li");
+	historyItem.innerHTML = `Status opened at ${new Date().toLocaleTimeString()}`;
+	statusHistory.appendChild(historyItem);
+}
+
 function toggleStatus(e) {
 	e.preventDefault();
 	const statusDiv = document.getElementById("status-output");
@@ -57,6 +70,7 @@ function toggleStatus(e) {
 	if (!statusDiv.classList.contains("hidden")) {
 		mainTitle.style.backgroundColor = "yellow";
 		createTimestamp();
+		addStatusHistory();
 	} else {
 		mainTitle.style.backgroundColor = "";
 	}
