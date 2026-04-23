@@ -50,6 +50,13 @@ function createTimestamp() {
 	statusOutput.appendChild(timestamp);
 }
 
+//Consists of
+//document.createElement() which creates a new history list item.
+//.innerHTML which adds the text inside the new history item.
+//.appendChild() which adds the new list item into the history list.
+//new Date() gets the current date/time.
+//.toLocaleTimeString() which formats the time into a readable time format.
+
 function addStatusHistory() {
 	const firstHistoryItem = statusHistory.querySelector("li");
 
